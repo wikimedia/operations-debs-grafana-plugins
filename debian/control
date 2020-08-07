@@ -1,0 +1,32 @@
+Source: grafana-plugins
+Section: net
+Priority: optional
+Maintainer: Filippo Giunchedi <fgiunchedi@wikimedia.org>
+Build-Depends: debhelper (>= 10),
+  wget, unzip, ca-certificates,
+# Install the embedded Chromium library requirements so dpkg-shlibdeps can work
+# https://grafana.com/docs/grafana/latest/administration/image_rendering/
+  libasound2,
+  libatk-bridge2.0-0,
+  libatk1.0-0,
+  libatspi2.0-0,
+  libcairo2,
+  libcups2,
+  libgdk3.0-cil,
+  libgtk3.0-cil,
+  libnss3,
+  libpango-1.0-0,
+  libpangocairo-1.0-0,
+  libx11-xcb-dev,
+  libxdamage1,
+  libxext6,
+  libxi6,
+  libxrandr2,
+  libxss1,
+  libxtst6,
+Standards-Version: 3.9.8
+
+Package: grafana-plugins
+Architecture: any
+Depends: grafana, ${shlibs:Depends}, ${misc:Depends}
+Description: Packaged Grafana plugins at Wikimedia Foundation

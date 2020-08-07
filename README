@@ -1,0 +1,18 @@
+Grafana plugins Debian package
+==============================
+
+The repository contains the Debian scaffolding used to download and package a
+selection of Grafana plugins.
+
+# Build
+
+The provided Makefile is the entry point that debian/rules will implicitely
+use, specifically calling the 'build' target to download and do any necessary
+preparation of the plugins. Since the internet is used, make sure your build
+environment can reach out (e.g. USENETWORK=yes and/or http proxies for
+pbuilder/cowbuilder), for example:
+
+  https_proxy=http://webproxy.codfw.wmnet:8080 pdebuild
+
+Once the 'build' target is done then the 'install' target takes care of
+installing the result within the Debian package proper.

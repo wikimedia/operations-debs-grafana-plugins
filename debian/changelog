@@ -1,0 +1,5 @@
+grafana-plugins (0.1) buster-wikimedia; urgency=medium
+
+  * First release
+
+ -- Filippo Giunchedi <fgiunchedi@wikimedia.org>  Wed, 05 Aug 2020 15:39:33 +0200

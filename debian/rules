@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/default.mk
+
+export DH_VERBOSE = 1
+
+%:
+	dh $@
+
+# Stripping results in "Pkg: Error reading from file." at startup
+override_dh_strip:
