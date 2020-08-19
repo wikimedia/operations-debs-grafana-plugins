@@ -4,6 +4,7 @@ set -eu
 
 gir_version="2.0.0"
 json_ds_version="1.4.1"
+piechart_version="1.6.0"
 
 build_dir=$PWD/build
 out_dir=${build_dir}/out
@@ -37,5 +38,15 @@ build_json_datasource() {
   fi
 }
 
+build_piechart() {
+  local version=$1
+
+  wget --no-verbose -O"${build_dir}/piechart.zip" \
+      "https://github.com/grafana/piechart-panel/releases/download/v${version}/grafana-piechart-panel-${version}.zip"
+
+  unzip -o -d "${out_dir}" "${build_dir}/piechart.zip"
+}
+
 build_gir ${gir_version}
 build_json_datasource ${json_ds_version}
+build_piechart ${piechart_version}
